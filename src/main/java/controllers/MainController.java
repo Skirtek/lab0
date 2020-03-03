@@ -92,8 +92,9 @@ public class MainController {
 
     @FXML
     public void deleteEmployees(){
-        //TODO Dokończyć funkcjonalność
         ObservableList<Employee> selectedRows = employeers_table.getSelectionModel().getSelectedItems();
+        selectedRows.forEach(employee -> employeeService.deleteEmployee(employee));
+
         employees.removeAll(selectedRows);
     }
 
